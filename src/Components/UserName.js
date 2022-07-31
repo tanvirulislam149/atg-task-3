@@ -21,7 +21,7 @@ const UserName = ({ u, setUserId }) => {
                      borderRadius: "50%",
                   }}
                   className="m-2"
-                  src={u.avatar}
+                  src={u?.avatar}
                   onError={({ currentTarget }) => {
                      if (imgError) {
                         setImgError(false);
@@ -31,7 +31,7 @@ const UserName = ({ u, setUserId }) => {
                   }}
                />
                <p className="my-0 ms-1">
-                  {u.profile.firstName} {u.profile.lastName}
+                  {u?.profile?.firstName} {u?.profile?.lastName}
                </p>
             </div>
          </div>

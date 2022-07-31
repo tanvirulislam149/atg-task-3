@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const UserDetails = ({ id, user }) => {
    //    const [imgError, setImgError] = useState(true);
 
-   const singleUser = user.find((u) => u.id === id);
+   const singleUser = user?.find((u) => u.id === id);
    console.log(singleUser);
 
    return (
@@ -18,7 +18,7 @@ const UserDetails = ({ id, user }) => {
                      borderRadius: "50%",
                   }}
                   className="m-2"
-                  src={singleUser.avatar}
+                  src={singleUser?.avatar}
                   onError={({ currentTarget }) => {
                      //  if (imgError) {
                      //     setImgError(false);
@@ -44,7 +44,7 @@ const UserDetails = ({ id, user }) => {
                         padding: "10px",
                      }}
                   >
-                     <p className="m-0">{singleUser.Bio}</p>
+                     <p className="m-0">{singleUser?.Bio}</p>
                   </div>
                   <p className="mb-0 mt-4 fw-bold">Full Name</p>
                   <div
@@ -55,8 +55,8 @@ const UserDetails = ({ id, user }) => {
                      }}
                   >
                      <p className="m-0">
-                        {singleUser.profile.firstName}{" "}
-                        {singleUser.profile.lastName}
+                        {singleUser?.profile?.firstName}{" "}
+                        {singleUser?.profile?.lastName}
                      </p>
                   </div>
                   <p className="mb-0 mt-4 fw-bold">Job Title</p>
@@ -67,7 +67,7 @@ const UserDetails = ({ id, user }) => {
                         padding: "10px",
                      }}
                   >
-                     <p className="m-0">{singleUser.jobTitle}</p>
+                     <p className="m-0">{singleUser?.jobTitle}</p>
                   </div>
                   <p className="mb-0 mt-4 fw-bold">Email</p>
                   <div
@@ -77,7 +77,7 @@ const UserDetails = ({ id, user }) => {
                         padding: "10px",
                      }}
                   >
-                     <p className="m-0">{singleUser.profile.email}</p>
+                     <p className="m-0">{singleUser?.profile?.email}</p>
                   </div>
                </div>
             </div>
